@@ -1,4 +1,4 @@
-et -euo pipefail
+set -euo pipefail
 
 # Pick a Zola version that matches your site. Check https://github.com/getzola/zola/releases
 ZOLA_VERSION="0.19.2"
