@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    {% if page %}
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% endif %}
+    {% if page.taxonomies.tags %}
+    <meta name="keywords" content="{% for tag in page.taxonomies.tags %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
+    {% endif %}
+    {% elif section %}
+    {% if section.description %}
+    <meta name="description" content="{{ section.description }}">
+    {% endif %}
+    {% if section.taxonomies.tags %}
+    <meta name="keywords" content="{% for tag in section.taxonomies.tags %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
+    {% endif %}
+    {% endif %}
+    {% if page %}<link rel="canonical" href="{{ page.permalink }}" />
+    {% elif section %}<link rel="canonical" href="{{ section.permalink }}" />
+    {% else %}<link rel="canonical" href="{{ config.base_url }}" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+    {% block extra_head %}{% endblock extra_head %}
+    <style>
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr 220px;
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      @media (max-width: 768px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+      #sidebar {
+        font-size: 0.9em;
+        border-left: 1px solid var(--border, #333);
+        padding-left: 1.5rem;
+      }
+      #sidebar h3 {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+        margin-top: 1.25rem;
+        opacity: 0.7;
+      }
+      #sidebar h3:first-child {
+        margin-top: 0;
+      }
+      #sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      #sidebar ul li {
+        padding: 0.3rem 0;
+        border-bottom: 1px solid var(--border, #222);
+      }
+      #sidebar ul li:last-child {
+        border-bottom: none;
+      }
+      #sidebar a {
+        color: inherit;
+        text-decoration: none;
+      }
+      #sidebar a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <!-- IndieWeb / Webmention -->
+    <link rel="webmention" href="https://webmention.io/freebird360.com/webmention" />
+    <link rel="pingback" href="https://webmention.io/xmlrpc" />
+
+    <!-- Bridgy Fed -->
+    <link rel="me" href="https://fed.brid.gy/" />
+  </head>
+  <body class="theme-{{ config.extra.zolanight.theme | default(value="tokyonight") }}">
+    {% set root_section = get_section(path="_index.md") %}
+    <header>
+      <nav>
+        <a href="{{ config.base_url }}">/home/</a>
+
+        {# Render subsections #}
+        {% for subsection_path in root_section.subsections %}
+        {% set subsection = get_section(path=subsection_path) %}
+        <a href="{{ subsection.permalink }}">{{ subsection.permalink | replace(from=config.base_url, to="") }}</a>
+        {% endfor %}
+
+        {# Render pages at the root #}
+        {% for page in root_section.pages %}
+        <a href="{{ page.permalink }}">{{ page.permalink | replace(from=config.base_url, to="") }}</a>
+        {% endfor %}
+      </nav>
+      <link rel="openid.delegate" href="https://freebird360.com/" />
+      <link rel="openid.server" href="https://openid.indieauth.com/openid" />
+    </header>
+    <hr>
+    <div class="layout">
+      <main>
+        {% block content %}{% endblock content %}
+      </main>
+      <aside id="sidebar">
+        <h3>Fiction</h3>
+        <ul>
+          <li><a href="https://www.royalroad.com/profile/985097" target="_blank" rel="noopener">Royal Road</a></li>
+          <li><a href="https://www.patreon.com/freebird360" target="_blank" rel="noopener">Patreon</a></li>
+        </ul>
+        <h3>Essays</h3>
+        <ul>
+          <li><a href="https://freebird360.substack.com" target="_blank" rel="noopener">Substack</a></li>
+        </ul>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="https://www.patreon.com/freebird360" target="_blank" rel="noopener">Patreon</a></li>
+        </ul>
+        <h3>Social</h3>
+        <ul>
+          <li><a rel="me noopener" href="https://mastodon.social/@freebird360" target="_blank">Mastodon</a></li>
+          <li><a rel="me noopener" href="https://bsky.app/profile/freebird360.com" target="_blank">Bluesky</a></li>
+          <li><a rel="me noopener" href="https://threads.com/@freebird360m" target="_blank">Threads</a></li>
+          <li><a rel="me noopener" href="https://www.reddit.com/user/freebird360" target="_blank">Reddit</a></li>
+          <li><a rel="me noopener" href="https://codeberg.org/freebird360" target="_blank">Codeberg</a></li>
+          <li><a rel="me noopener" href="https://github.com/freebird360" target="_blank">Github</a></li>
+        </ul>
+      </aside>
+    </div>
+    <hr>
+    <footer>
+      <p>Powered by <a href="https://www.getzola.org/">Zola</a> and <a href="https://github.com/mxaddict/zolanight">ZolaNight Theme</a></p>
+      {% if config.extra.zolanight.ko_fi_url %}
+      <p>Support this content on <a href="{{ config.extra.zolanight.ko_fi_url }}">Ko-fi</a>.</p>
+      {% endif %}
+      <div class="h-card" style="display:none">
+        <a class="u-url u-uid" href="https://freebird360.com"></a>
+        <span class="p-name">Benjamin</span>
+      </div>
+    </footer>
+  </body>
+</html>
