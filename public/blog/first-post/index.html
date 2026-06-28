@@ -3,28 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-    {% if page %}
-    {% if page.description %}
-    <meta name="description" content="{{ page.description }}">
-    {% endif %}
-    {% if page.taxonomies.tags %}
-    <meta name="keywords" content="{% for tag in page.taxonomies.tags %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
-    {% endif %}
-    {% elif section %}
-    {% if section.description %}
-    <meta name="description" content="{{ section.description }}">
-    {% endif %}
-    {% if section.taxonomies.tags %}
-    <meta name="keywords" content="{% for tag in section.taxonomies.tags %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}">
-    {% endif %}
-    {% endif %}
-    {% if page %}<link rel="canonical" href="{{ page.permalink }}" />
-    {% elif section %}<link rel="canonical" href="{{ section.permalink }}" />
-    {% else %}<link rel="canonical" href="{{ config.base_url }}" />
-    {% endif %}
-    <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
-    {% block extra_head %}{% endblock extra_head %}
+    <title>First Post - </title>
+    
+    
+    <meta name="description" content="Introduction. Social links, ethos, etc.">
+    
+    
+    <meta name="keywords" content="creative commons, intro, socials, ethos, indieweb">
+    
+    
+    <link rel="canonical" href="https:&#x2F;&#x2F;freebird360.com&#x2F;blog&#x2F;first-post&#x2F;" />
+    
+    <link rel="stylesheet" href="https://freebird360.com/style.css">
+    
     <style>
       .layout {
         display: grid;
@@ -77,22 +68,20 @@
     <!-- Bridgy Fed -->
     <link rel="me" href="https://fed.brid.gy/" />
   </head>
-  <body class="theme-{{ config.extra.zolanight.theme | default(value="tokyonight") }}">
-    {% set root_section = get_section(path="_index.md") %}
+  <body class="theme-tokyonight">
+    
     <header>
       <nav>
-        <a href="{{ config.base_url }}">/home/</a>
+        <a href="https:&#x2F;&#x2F;freebird360.com">/home/</a>
 
-        {# Render subsections #}
-        {% for subsection_path in root_section.subsections %}
-        {% set subsection = get_section(path=subsection_path) %}
-        <a href="{{ subsection.permalink }}">{{ subsection.permalink | replace(from=config.base_url, to="") }}</a>
-        {% endfor %}
+        
+        
+        
+        <a href="https:&#x2F;&#x2F;freebird360.com&#x2F;blog&#x2F;">&#x2F;blog&#x2F;</a>
+        
 
-        {# Render pages at the root #}
-        {% for page in root_section.pages %}
-        <a href="{{ page.permalink }}">{{ page.permalink | replace(from=config.base_url, to="") }}</a>
-        {% endfor %}
+        
+        
       </nav>
       <link rel="openid.delegate" href="https://freebird360.com/" />
       <link rel="openid.server" href="https://openid.indieauth.com/openid" />
@@ -100,7 +89,37 @@
     <hr>
     <div class="layout">
       <main>
-        {% block content %}{% endblock content %}
+        
+<section class="h-entry">
+  <h1 class="p-name">First Post</h1>
+  
+  <p>published: <time class="dt-published" datetime="2026-06-25T00:00:00Z">2026-06-25</time></p>
+  
+  
+  <p class="tags">
+  tags: [
+  
+  <a class="p-category" href="https://freebird360.com/tags/creative-commons/">#creative commons</a>, 
+  
+  <a class="p-category" href="https://freebird360.com/tags/intro/">#intro</a>, 
+  
+  <a class="p-category" href="https://freebird360.com/tags/socials/">#socials</a>, 
+  
+  <a class="p-category" href="https://freebird360.com/tags/ethos/">#ethos</a>, 
+  
+  <a class="p-category" href="https://freebird360.com/tags/indieweb/">#indieweb</a>
+  
+  ]
+  </p>
+  
+  <a class="u-url" href="https:&#x2F;&#x2F;freebird360.com&#x2F;blog&#x2F;first-post&#x2F;"></a>
+  <div class="e-content">
+    <p>Hello, world! Testing, testing, 1 2 3...</p>
+
+  </div>
+</section>
+
+
       </main>
       <aside id="sidebar">
         <h3>Fiction</h3>
@@ -129,12 +148,10 @@
     </div>
     <hr>
     <footer>
-      {% set current_year = now() | date(format="%Y") | int %}
-      &copy; {% if current_year == 2026 %}2026{% else %}2026&ndash;{{ current_year }}{% endif %} Benjamin Heath. All content hosted on this website is released under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated. Links to third-party platforms are not subject to this license.
-      <p>Powered by <a href="https://www.getzola.org/">Zola</a> and <a href="https://github.com/mxaddict/zolanight">ZolaNight Theme</a>. Hosted on <a href="https://www.netlify.com/">Netlify</a>.</p>
-      {% if config.extra.zolanight.ko_fi_url %}
-      <p>Support this content on <a href="{{ config.extra.zolanight.ko_fi_url }}">Ko-fi</a>.</p>
-      {% endif %}
+      
+      &copy; 2026 Benjamin Heath. All content hosted on this website is released under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated. Links to third-party platforms are not subject to this license.
+      <p>Powered by <a href="https://www.getzola.org/">Zola</a> and <a href="https://github.com/mxaddict/zolanight">ZolaNight Theme</a></p>
+      
       <div class="h-card" style="display:none">
         <a class="u-url u-uid" href="https://freebird360.com"></a>
         <span class="p-name">Benjamin</span>

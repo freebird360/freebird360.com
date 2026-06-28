@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://freebird360.com/</loc>
+    </url>
+    <url>
+        <loc>https://freebird360.com/blog/</loc>
+    </url>
+    <url>
+        <loc>https://freebird360.com/blog/first-post/</loc>
+        <lastmod>2026-06-25</lastmod>
+    </url>
+    <url>
+        <loc>https://freebird360.com/blog/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://freebird360.com/tags/</loc>
+    </url>
+    <url>
+        <loc>https://freebird360.com/tags/creative-commons/</loc>
+    </url>
+    <url>
+        <loc>https://freebird360.com/tags/ethos/</loc>
+    </url>
+    <url>
+        <loc>https://freebird360.com/tags/indieweb/</loc>
+    </url>
+    <url>
+        <loc>https://freebird360.com/tags/intro/</loc>
+    </url>
+    <url>
+        <loc>https://freebird360.com/tags/socials/</loc>
+    </url>
+</urlset>
