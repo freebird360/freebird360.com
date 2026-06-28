@@ -1,5 +1,5 @@
 +++
-title = "First Post: Backstory"
+title = "First Post"
 date = 2026-06-25
 description = "Introduction. Social links, ethos, etc."
 
@@ -7,4 +7,4 @@ description = "Introduction. Social links, ethos, etc."
 tags = ["creative commons", "intro", "socials", "ethos", "indieweb"]
 +++
 
-I've bee
+Hello, world! Testing, testing, 1 2 3...
