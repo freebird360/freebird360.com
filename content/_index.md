@@ -21,7 +21,7 @@ My goal is to write fiction and non-fiction as a contribution to the IndieWeb, t
 
 ## Contact
 
-## Financial Support
+## Financial Support-->
 
 ## Acknowledgments and Gratitude
--->
+* phoenix icon by Lewen Design from <a href="https://thenounproject.com/browse/icons/term/phoenix/" target="_blank" title="phoenix Icons">Noun Project</a> (CC BY 3.0) 
