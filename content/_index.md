@@ -1,8 +1,27 @@
 +++
-title = "Benjamin Heath @freebird360"
+title = "Benjamin Heath"
 template = "index.html"
 +++
 
-<img src="/images/avatar.jpg" alt="Benjamin Heath" width="25%" style="float: left; margin: 0 1.5rem 1rem 0;"> Hi, I'm Ben. This is my personal website. Not much here yet, but check back soon. Thank you for stopping by!
+<img src="/images/avatar.jpg" alt="Benjamin Heath" width="25%" style="float: left; margin: 0 1.5rem 1rem 0;">
 
-<!-- Hi, I'm Ben. I write serialized web fiction released under Creative Commons. Here you'll find my published and ongoing work, along with a blog where I share project updates and news from around my socials. If you enjoy what you find, sharing it or supporting me on Patreon or LiberaPay means a lot. Thank you for stopping by!  -->
+## About me
+Hi, my name is Ben, and this is my personal website.
+
+During the day, I'm a blue collar guy who drives a big truck and delivers stuff.
+
+My real aspiration is to write fiction and non-fiction as an independent voice.
+
+On the sidebar, you'll find links to my other social media and platforms, and if you're interested in what I'm doing, I hope you'll follow me there.
+
+Thank you!
+
+<!--## Mission Statement
+My goal is to write fiction and non-fiction as a contribution to the IndieWeb, to the Creative Commons, and to an open culture. To that end, I want to my publish my serialized fiction on platforms like Royal Road with early access on Patreon, and my essays and other non-fiction on Substack before they're made available here.
+
+## Contact
+
+## Financial Support
+
+## Acknowledgments and Gratitude
+-->

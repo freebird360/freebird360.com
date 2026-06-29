@@ -130,7 +130,8 @@
     <hr>
     <footer>
       {% set current_year = now() | date(format="%Y") | int %}
-      &copy; {% if current_year == 2026 %}2026{% else %}2026&ndash;{{ current_year }}{% endif %} Benjamin Heath. All content hosted on this website is released under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated. Links to third-party platforms are not subject to this license.
+      &copy; {% if current_year == 2026 %}2026{% else %}2026&ndash;{{ current_year }}{% endif %} Benjamin Heath. All content hosted on this website is released under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated. Links to third-party platforms are not subject to this license unless otherwise stated.
+      </p>
       <p>Powered by <a href="https://www.getzola.org/">Zola</a> and <a href="https://github.com/mxaddict/zolanight">ZolaNight Theme</a>. Hosted on <a href="https://www.netlify.com/">Netlify</a>.</p>
       {% if config.extra.zolanight.ko_fi_url %}
       <p>Support this content on <a href="{{ config.extra.zolanight.ko_fi_url }}">Ko-fi</a>.</p>
